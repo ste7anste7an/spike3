@@ -56,4 +56,5 @@ def initialize(self):
             # self.send_timer.init(period=self.period, mode=machine.Timer.PERIODIC, callback= self.hubCallback)
         return
 ```
-
+## No wait in process loop
+In stead of time.delay_ms(20) use a check for ticks difference. Other wise, the response comes too late after a NACK from the hub.
